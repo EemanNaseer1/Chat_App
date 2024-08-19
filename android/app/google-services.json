@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1020021519199",
+    "project_id": "mychatapp-39ccf",
+    "storage_bucket": "mychatapp-39ccf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020021519199:android:9002df815b238c71d6bcea",
+        "android_client_info": {
+          "package_name": "com.smart.chatapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWqX34j3JOWDQOYwMtKbmoePGwuLJldAc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
