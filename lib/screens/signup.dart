@@ -1,17 +1,19 @@
-import 'package:chatapp/screens/signup.dart';
+import 'package:chatapp/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignupScreen> createState() => _SignupScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignupScreenState extends State<SignupScreen> {
 
-TextEditingController emailcontroller = TextEditingController();
-TextEditingController passwordcontroller = TextEditingController();
+TextEditingController fullnamecontroller = TextEditingController();
+TextEditingController email1controller = TextEditingController();
+TextEditingController password1controller = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +49,7 @@ TextEditingController passwordcontroller = TextEditingController();
                       children: [
                         Container(
                           margin: EdgeInsets.only(top: 20),
-                          child: Text("Login",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w600),),
+                          child: Text("Signup",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w600),),
                         ),
                         Container(
                           margin: EdgeInsets.only(top: 25),
@@ -57,11 +59,10 @@ TextEditingController passwordcontroller = TextEditingController();
                             border: Border.all(color: Color.fromRGBO(237, 237, 237, 1)),borderRadius: BorderRadius.circular(7)
                            ),  
                           child: TextField(
-                          controller: emailcontroller,
+                          controller: fullnamecontroller,
                           decoration: InputDecoration(
                             icon: Icon(Icons.person),
-                            hintText: "example@gmail.com"
-                            // hoverColor: Color.fromRGBO(92, 90, 90, 1)
+                            hintText: "Name"
                           ),
                          ),
                         ),
@@ -73,7 +74,22 @@ TextEditingController passwordcontroller = TextEditingController();
                             border: Border.all(color: Color.fromRGBO(237, 237, 237, 1)),borderRadius: BorderRadius.circular(7)
                            ),  
                           child: TextField(
-                          controller: passwordcontroller,
+                          controller: fullnamecontroller,
+                          decoration: InputDecoration(
+                            icon: Icon(Icons.email),
+                            hintText: "example@gmail.com"
+                          ),
+                         ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 25),
+                           height: 42,
+                           width: 230,
+                           decoration: BoxDecoration(
+                            border: Border.all(color: Color.fromRGBO(237, 237, 237, 1)),borderRadius: BorderRadius.circular(7)
+                           ),  
+                          child: TextField(
+                          controller: email1controller,
                           obscureText: true,
                           decoration: InputDecoration(
                            icon: Icon(Icons.lock),
@@ -82,39 +98,27 @@ TextEditingController passwordcontroller = TextEditingController();
                           ),
                          ),
                         ),
-                        Container(
-                          padding: EdgeInsets.only(left: 100),
-                          child: TextButton(onPressed: (){}, child: Text("Forget Password?",style: TextStyle(color: Color.fromRGBO(0, 0, 0, 1)),)),
-                        ),
                          Container(
-                          margin: EdgeInsets.only(top: 15),
+                          margin: EdgeInsets.only(top: 20),
                            height: 42,
                            width: 230,
-                           child: TextButton(onPressed: (){}, child: Text("Login",style: TextStyle(color: Color.fromRGBO(255, 255, 255, 1)),)),
+                           child: TextButton(onPressed: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+                           }, child: Text("Signup",style: TextStyle(color: Color.fromRGBO(255, 255, 255, 1)),)),
                            decoration: BoxDecoration(
                              color: Color.fromRGBO(236, 37, 120, 1),
                             border: Border.all(color: Color.fromRGBO(237, 237, 237, 1)),borderRadius: BorderRadius.circular(7)
-                           ),),
-                           Padding(padding: EdgeInsets.only(top: 7)),
-                           Text("Or",style: TextStyle(color: Color.fromRGBO(236, 37, 120, 1),),),
-                           Container(
-                            padding: EdgeInsets.only(top: 7),
-                            child: Image.asset("assets/images/google.png"),
-                           )  
+                           ),),   
                       ],
                     ),
                   ),
                   Container(
                     padding: EdgeInsets.only(left: 30,top: 10),
-                    child: TextButton(onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => SignupScreen()));
-                    }, child: Text("Don’t have an account?",style: TextStyle(color: Color.fromRGBO(0, 0, 0, 1),fontWeight: FontWeight.w600,fontSize: 16),)),
+                    child: TextButton(onPressed: (){}, child: Text("Already have an account?",style: TextStyle(color: Color.fromRGBO(0, 0, 0, 1),fontWeight: FontWeight.w600,fontSize: 16),)),
                   ),
                   Container(
                     padding: EdgeInsets.only(left: 25),
-                    child: TextButton(onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => SignupScreen()));
-                    }, child: Text("Register",style: TextStyle(color: Color.fromRGBO(236, 37, 120, 1),fontSize: 18,fontWeight: FontWeight.w800),)),
+                    child: TextButton(onPressed: (){}, child: Text("Signup",style: TextStyle(color: Color.fromRGBO(236, 37, 120, 1),fontSize: 18,fontWeight: FontWeight.w800),)),
                   ),
                   Container(
                     padding: EdgeInsets.only(top: 10,left: 25),
